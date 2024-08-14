@@ -13,6 +13,8 @@
 
 ## 사용방법
 
+해당 레포지토리 클론 후 QtTodoUI로 가셔서 실행하시면 됩니다.
+
 ![mainview](https://github.com/user-attachments/assets/d50c9c36-2120-44d7-a713-a66f8b42ecbe)
 
 오른쪽 상단 3개의 아이콘중 왼쪽부터 저장, 로그인 로그아웃 입니다.
