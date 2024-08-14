@@ -38,7 +38,11 @@
 
 ![todoview](https://github.com/user-attachments/assets/90e677c2-eb77-466c-9be1-dc7b5205cfd5)
 todo를 입력 한 후 입니다.
+이 때, 우측부터 휴지통 모양을 클릭하면 해당 todo의 삭제, 그 왼쪽의 수정 모양을 클릭하면 해당 todo를 하단 입력창에서 수정 할 수 있습니다.
 todo를 입력 후 체크박스를 선택하면,
 ![todohide](https://github.com/user-attachments/assets/b9b24825-d2f0-4823-ae27-0c7802a08ec5)
 
 아래와 같이 됩니다.
+
+## 추가사항
+> 이후 추가사항이 있으면, 이 부분에 수정일시와 함께 적도록 하겠습니다.
