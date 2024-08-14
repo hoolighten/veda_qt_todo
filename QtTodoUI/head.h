@@ -22,6 +22,7 @@ private:
     QString getCurrentDateTime();
     Ui::Head *ui;
     QTimer* timer;
+    bool isLogin;
 
 signals:
     void save();

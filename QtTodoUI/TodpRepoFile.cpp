@@ -1,5 +1,5 @@
 #include"TodoRepo.h"
-
+#include <QWidget>
 using namespace std;
 
 TodoRepoFile::TodoRepoFile(string dir)
@@ -12,17 +12,20 @@ TodoRepoFile::TodoRepoFile(string dir)
 
 unsigned int TodoRepoFile::saveArray(vector<Todo> data)
 {
+
     int i = 0;
     lock.lock();
-    output.open(dir, ios::binary | ios::app);
 
+    qDebug()<<"save";
+    output.open(dir, ios::binary | ios::app);
     if (!output.is_open()) {
         cerr << "output stream cannot open";
-
+        lock.unlock();
         return 0;
     }
     output.seekp(ios::beg);
     for (i = 0; i < data.size(); i++) {
+        qDebug()<<data[i].getContent();
         output.write((char*)(&data[i]), sizeof(Todo));
     }
     output.close();
@@ -38,7 +41,7 @@ void TodoRepoFile::load(vector<Todo>& res)
 
     if (!input.is_open()) {
         cerr << "input stream cannot open";
-
+        lock.unlock();
         return;
     }
     if (!input.is_open()) {

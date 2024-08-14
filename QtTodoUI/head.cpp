@@ -4,14 +4,15 @@
 #include <QDateTime>
 #include <QPushButton>
 #include <QInputDialog>
+#include <QMessageBox>
 Head::Head(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Head)
 {
+    isLogin=false;
     ui->setupUi(this);
 
     ui->save->setIcon(":/icons/save.png");
-    ui->load->setIcon(":/icons/download.png");
     ui->logout->setIcon(":/icons/logout.png");
     ui->login->setIcon(":/icons/login.png");
     timer = new QTimer();
@@ -25,16 +26,26 @@ Head::Head(QWidget *parent)
                 ui->label_2->setText(getCurrentDateTime());
     });
     ui->save->setClick([&](){ emit save(); });
-    ui->load->setClick([&](){ emit load(); });
     ui->logout->setClick(this, [&](){
+        if(!isLogin){
+            QMessageBox::warning(this, "로그인 오류", "로그인 먼저 하세요.", QMessageBox::Ok);
+            return;
+        }
         emit logout();
+        isLogin=false;
     });
     ui->login->setClick(this, [&](){
+        if(isLogin){
+            QMessageBox::warning(this, "로그인 오류", "이미 로그인 중 입니다", QMessageBox::Ok);
+            return;
+        }
         QString userName;
         bool ok;
         userName = QInputDialog::getText(this, "로그인", "유저이름", QLineEdit::Normal, userName, &ok);
-        if(ok && !userName.isEmpty())
+        if(ok && !userName.isEmpty()){
             emit login(userName);
+            isLogin=true;
+        }
     });
 }
 

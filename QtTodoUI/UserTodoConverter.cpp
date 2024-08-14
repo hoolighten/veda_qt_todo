@@ -2,6 +2,7 @@
 
 #include "UserTodoConverter.h"
 #include <ctime>
+#include <QWidget>
 #include <map>
 using namespace std;
 
@@ -13,6 +14,7 @@ UserTodoConverterImpl::UserTodoConverterImpl(TodoRepo* repo)
 unsigned int UserTodoConverterImpl::save(map<string, UserTodo> data)
 {
     unsigned int i = 0;
+    qDebug()<<"convert save";
     for (auto iter = data.begin(); iter != data.end(); iter++) {
 
         vector<Todo> currentTodo;

@@ -31,7 +31,6 @@ void TodoUI::loadTodo()
 
     for(Todo todo : data){
         TodoItem* item = new TodoItem();
-        qDebug()<<"load"<<todo.getIsDone();
         item->setContent(QString::fromStdString(todo.getContent()));
         item->setDueDate(QString::fromStdString(todo.getDueDate()));
         item->setIsDone(todo.getIsDone());
@@ -80,11 +79,11 @@ void TodoUI::loadTodo()
                 });
         connect(item, &TodoItem::checked, this,
                 [&](unsigned int id, bool flag){
-                    qDebug() << "checked" << id << flag;
                     if(flag){
                         manager->checkTodo(id, this->userName.toStdString());
                     }
-                    //showTodoList();
+                    removeListItems();
+                    showTodoList();
                 });
         if(todo.getIsDone()){
             this->doneTodo.push_back(item);
@@ -108,7 +107,6 @@ void TodoUI::showTodoList()
 
     if(enabled){
         for(auto todo: doneTodo){
-            qDebug() <<"show";
             QListWidgetItem* item = new QListWidgetItem();
             finishLayout.push_back(item);
             item->setSizeHint(todo->sizeHint());

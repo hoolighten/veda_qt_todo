@@ -58,22 +58,6 @@
     </widget>
    </item>
    <item>
-    <widget class="Button" name="load" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>50</width>
-       <height>50</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>50</width>
-       <height>50</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="Button" name="login" native="true">
      <property name="minimumSize">
       <size>

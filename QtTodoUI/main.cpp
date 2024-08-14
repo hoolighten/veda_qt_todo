@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    TodoRepo* repo = new TodoRepoFile("C:\\Users\\SeonghoJang\\Desktop\\Qt\\data");
+    TodoRepo* repo = new TodoRepoFile("data");
     UserTodoConverter* converter = new UserTodoConverterImpl(repo);
     DataManage* manager = new DataManageImpl(repo, converter);
 
