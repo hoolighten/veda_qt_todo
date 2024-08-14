@@ -13,6 +13,6 @@
 
 ## 사용방법
 
-![mainview]([https://github.com/hoolighten/veda_qt_todo/tree/main/imgs/mainview.png](https://github.com/hoolighten/veda_qt_todo/blob/main/imgs/mainview.PNG?raw=true))
+![mainview](https://github.com/user-attachments/assets/5dec15f3-a9e9-475c-aac5-da6204353a11)
 
 오른쪽 상단 3개의 아이콘중 왼쪽부터 저장, 로그인 로그아웃 입니다.
