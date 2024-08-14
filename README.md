@@ -10,3 +10,9 @@
 ## 코드상 있지만 아직 하지 못한 것
 - 마감일 이후 todo 내용의 글자색을 빨간색으로 표시
 - text로 출력
+
+## 사용방법
+
+[mainview](https://github.com/hoolighten/veda_qt_todo/tree/main/imgs/mainview.png)
+
+오른쪽 상단 3개의 아이콘중 왼쪽부터 저장, 로그인 로그아웃 입니다.
